@@ -1,2 +1,3 @@
-# DeepRacer_RewardFunctions
-Collection of my AWS DeepRacer reward functions for possible later reuse
+# DeepRacer Reward Functions
+
+Collection of AWS DeepRacer reward functions used by me for possible later reuse.
