@@ -13,7 +13,7 @@ def reward_function(params):
     reward = 1
 
     # Steering penalty threshold, change the number based on your action space setting
-    ABS_STEERING_THRESHOLD = 15
+    abs_steering_threshold = 15
 
     if not all_wheels_on_track:
         reward = 1e-3  # Penalize if the car goes off track
@@ -21,7 +21,7 @@ def reward_function(params):
         reward *=2
         
         # Penalize reward if the agent is steering too much
-        if steering > ABS_STEERING_THRESHOLD:
+        if steering > abs_steering_threshold:
             reward *= 0.8
         else:
             reward *= 1.2
@@ -43,10 +43,10 @@ def reward_function(params):
             direction_diff = 360 - direction_diff
         
         # Penalize the reward if the difference is too large
-        DIRECTION_THRESHOLD = 10.0
-        if direction_diff > DIRECTION_THRESHOLD:
+        direction_threshold = 10.0
+        if direction_diff > direction_threshold:
             reward *= 0.5
-        elif direction_diff <= DIRECTION_THRESHOLD:
+        elif direction_diff <= direction_threshold:
             reward *= 2
             if params['speed'] < 2:
                 reward *= 0.9  # Penalize if the car goes too slow
