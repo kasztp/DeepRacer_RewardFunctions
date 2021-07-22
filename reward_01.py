@@ -2,16 +2,12 @@ import math
 
 
 def reward_function(params):
-
     # Read input parameters
     steering = abs(params['steering_angle'])  # Only need the absolute steering angle
     waypoints = params['waypoints']
     closest_waypoints = params['closest_waypoints']
     heading = params['heading']
     all_wheels_on_track = params['all_wheels_on_track']
-    distance_from_center = params['distance_from_center']
-    track_width = params['track_width']
-    is_left_of_center = params['is_left_of_center']
 
     # Initialize reward
     reward = 1
